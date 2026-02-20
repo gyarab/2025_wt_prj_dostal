@@ -26,7 +26,7 @@ pip install -r requirements.txt
 **Windows:**
 
 ```bash
-py -3 ./prj/manage.py runserver
+python ./prj/manage.py runserver
 ```
 
 **MacOS / Linux:**
