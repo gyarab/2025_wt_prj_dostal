@@ -1,5 +1,34 @@
 # CalorieTracker - Databáze jídel a sledování kalorií
-CalorieTracker je webová aplikace vytvořená v Django, která slouží ke sledování denního příjmu kalorií a živin. Uživatelé si budou moci vytvářet vlastní účet a zaznamenávat jednotlivá jídla během dne podle data a času. Každé jídlo bude obsahovat název, množství, kalorickou hodnotu a základní makroživiny (bílkoviny, sacharidy, tuky), které budou převzaty z nutriční tabulky produktů. Aplikace umožní zobrazování denních a týdenních přehledů, výpočet celkového příjmu kalorií a porovnání s individuálně nastaveným cílem. Součástí projektu bude také databáze potravin, možnost vyhledávání a filtrování jídel a jednoduché statistiky pro sledování dlouhodobého stravovacího pokroku a zlepšování životního stylu.
+
+Projekt CalorieTracker je webová aplikace zaměřená na sledování stravování a <u>nutričního příjmu</u> uživatele. Hlavním cílem aplikace je umožnit uživatelům zaznamenávat jejich pokrmy během dne a sledovat jejich denní příjem <u>kalorií</u> a <u>makroživin</u>.
+
+V systému vystupují tři základní role: anonymní návštěvník, registrovaný uživatel a administrátor.
+
+Anonymní návštěvník může zobrazovat základní informace o aplikaci bez schopnosti záznamu nebo sledování jídel a vytvořit si uživatelský účet. Po registraci získá uživatel přístup ke svému profilu a k hlavní stránce aplikace. Na této stránce se zobrazují informace o aktuálním denním příjmu <u>kalorií</u>, <u>makroživin</u>, seznam přidaných jídel a možnost přidat jílo z databáze.
+
+Každé jídlo je v aplikaci uloženo jako samostatný záznam, který obsahuje název potraviny, množství, datum přidání, <u>kalorickou hodnotu</u> a jednotlivé <u>makroživiny</u>, tedy <u>bílkoviny, sacharidy a tuky, cukry, nasycené mastné kyseliny</u> a dále.
+
+Uživate tak může pomocí vyhledávání rychle najít požadovanou potravinu a přidat ji do svého denního jídelníčku.
+
+Součástí systému je také možnost, aby si uživatel přidal do své databáze pokrmů vlastní potravinu nebo jídlo, pokud se nenachází v existující databázi potravin. Při vytváření nového záznamu může uživatel zadat název, <u>kalorie</u> a jednotlivé <u>makroživiny</u>.
+
+Role administrátora zajištue správu databáze potravin, například přidávání nových produktů do výchozí databáze, úpravu jejich <u>nutričních hodnot</u> nebo odstraňování chybných záznamů.
+
+## Wireframes
+
+### Mobil
+
+![Wireframe mobil](image.png)
+![Wireframe mobil 2](image-1.png)
+
+### Desktop
+
+![Wireframe desktop](image-2.png)
+![Wireframe desktop2](image-3.png)
+
+## User flow
+
+![User flow](image-4.png)
 
 ## Instalace a spuštění
 
