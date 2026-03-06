@@ -18,8 +18,8 @@ Role administrátora zajištue správu databáze potravin, například přidáv�
 
 ### Mobil
 
-![Wireframe mobil](images/wireframe_mobil_1.png)
-![Wireframe mobil 2](images/wireframe_mobil_2.png)
+![Wireframe mobil](images/wireframe_mobil_2.png)
+![Wireframe mobil 2](images/wireframe_mobil_1.png)
 
 ### Desktop
 
