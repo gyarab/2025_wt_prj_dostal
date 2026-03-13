@@ -30,6 +30,10 @@ Role administrátora zajištue správu databáze potravin, například přidáv�
 
 ![User flow](images/user_flow.png)
 
+## E-R diagram
+
+![E-R diagram](images/er_diagram.png)
+
 ## Instalace a spuštění
 
 ### 1. Vytvoření venv
