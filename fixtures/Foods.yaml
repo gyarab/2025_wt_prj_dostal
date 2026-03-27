@@ -1,0 +1,43 @@
+- model: app.food
+  pk: 1
+  fields:
+    name: Chicken Breast
+    calories: 165.0
+    protein: 31.0
+    carbs: 0.0
+    fats: 3.6
+    sugar: 0.0
+    saturated_fats: 1.0
+
+- model: app.food
+  pk: 2
+  fields:
+    name: Chicken Thigh
+    calories: 215.0
+    protein: 28.0
+    carbs: 0.0
+    fats: 12.0
+    sugar: 0.0
+    saturated_fats: 3.0
+
+- model: app.food
+  pk: 3
+  fields:
+    name: Chicken Wing
+    calories: 290.0
+    protein: 27.0
+    carbs: 0.0
+    fats: 21.0
+    sugar: 0.0
+    saturated_fats: 6.0
+
+- model: app.food
+  pk: 4
+  fields:
+    name: Rice
+    calories: 130.0
+    protein: 2.7
+    carbs: 28.0
+    fats: 0.3
+    sugar: 0.1
+    saturated_fats: 0.1

@@ -1,0 +1,7 @@
+- model: app.meal
+  pk: 1
+  fields:
+    user: 2
+    food: 1
+    amount: 100.0
+    date: 2026-03-20 11:14:23.115740+00:00
