@@ -1,13 +1,13 @@
 - model: app.food
   pk: 1
   fields:
-    name: Chicken Breast
-    calories: 165.0
-    protein: 31.0
-    carbs: 0.0
-    fats: 3.6
-    sugar: 0.0
-    saturated_fats: 1.0
+  name: Chicken Breast
+  calories: 165.0
+  protein: 31.0
+  carbs: 0.0
+  fats: 3.6
+  sugar: 0.0
+  saturated_fats: 1.0
 
 - model: app.food
   pk: 2
@@ -41,3 +41,91 @@
     fats: 0.3
     sugar: 0.1
     saturated_fats: 0.1
+
+- model: app.food
+  pk: 5
+  fields:
+    name: Broccoli
+    calories: 55.0
+    protein: 3.7
+    carbs: 11.2
+    fats: 0.6
+    sugar: 2.2
+    saturated_fats: 0.1
+
+- model: app.food
+  pk: 6
+  fields:
+    name: Quinoa
+    calories: 120.0
+    protein: 4.1
+    carbs: 21.3
+    fats: 1.9
+    sugar: 0.9
+    saturated_fats: 0.2
+
+- model: app.food
+  pk: 7
+  fields:
+    name: Sweet Potato
+    calories: 86.0
+    protein: 1.6
+    carbs: 20.1
+    fats: 0.1
+    sugar: 4.2
+    saturated_fats: 0.0
+
+- model: app.food
+  pk: 8
+  fields:
+    name: Avocado
+    calories: 160.0
+    protein: 2.0
+    carbs: 8.5
+    fats: 15.0
+    sugar: 0.7
+    saturated_fats: 2.1
+
+- model: app.food
+  pk: 9
+  fields:
+    name: Almonds
+    calories: 579.0
+    protein: 21.0
+    carbs: 21.0
+    fats: 50.0
+    sugar: 4.0
+    saturated_fats: 3.7
+
+- model: app.food
+  pk: 10
+  fields:
+    name: Cashews
+    calories: 553.0
+    protein: 18.0
+    carbs: 30.0
+    fats: 44.0
+    sugar: 5.0
+    saturated_fats: 7.8
+
+- model: app.food
+  pk: 11
+  fields:
+    name: Walnuts
+    calories: 654.0
+    protein: 15.0
+    carbs: 14.0
+    fats: 65.0
+    sugar: 2.6
+    saturated_fats: 6.1
+
+- model: app.food
+  pk: 12
+  fields:
+    name: Ground Beef
+    calories: 250.0
+    protein: 26.0
+    carbs: 0.0
+    fats: 17.0
+    sugar: 0.0
+    saturated_fats: 7.0

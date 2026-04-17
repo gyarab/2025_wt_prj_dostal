@@ -5,3 +5,35 @@
     food: 1
     amount: 100.0
     date: 2026-03-20 11:14:23.115740+00:00
+
+- model: app.meal
+  pk: 2
+  fields:
+    user: 2
+    food: 2
+    amount: 150.0
+    date: 2026-03-20 12:00:00.000000+00:00
+
+- model: app.meal
+  pk: 3
+  fields:
+    user: 2
+    food: 3
+    amount: 200.0
+    date: 2026-03-20 12:30:00.000000+00:00
+
+- model: app.meal
+  pk: 4
+  fields:
+    user: 2
+    food: 4
+    amount: 250.0
+    date: 2026-03-20 13:00:00.000000+00:00
+
+- model: app.meal
+  pk: 5
+  fields:
+    user: 2
+    food: 5
+    amount: 300.0
+    date: 2026-03-20 13:30:00.000000+00:00
