@@ -14,10 +14,11 @@ class Food(models.Model):
         return self.name
 
 class Meal(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     food = models.ForeignKey(Food, on_delete=models.CASCADE)
     amount = models.FloatField() 
     date = models.DateTimeField()
 
     def __str__(self):
-        return f"{self.user.username} - {self.food.name} ({self.date})"
+        user_name = self.user.username if self.user else "No User"
+        return f"{user_name} - {self.food.name} ({self.date})"
