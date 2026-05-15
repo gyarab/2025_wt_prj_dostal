@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <h1>Api Playground</h1>
+
+        <div class="api-test">
+            <h2>Test Food Get</h2>
+            <input type="number" id="foodIdInput" placeholder="Zadejte food id">
+            <button id="fetchFoodButton" onclick="fetchFood()">fetch Food</button>
+            <button id="resetFoodButton" onclick="resetFood()">reset Food</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    function resetFood() {
+        document.getElementById("foodIdInput").value = "";
+    };
+
+    function fetchFood() {
+        const foodId = document.getElementById("foodIdInput").value;
+        fetch(`/api/food/${foodId}/`)
+            .then(response => response.json())
+            .then(data => {
+                alert(`Food name: ${data.name}, Food price: ${data.price}`);
+            })
+            .catch(error => {
+                console.error('Error fetching food:', error);
+                alert('Error fetching food. Please check the console for details.');
+            });
+    };
+    console.log("Api playground loaded");
+</script>
+{% endblock %}
