@@ -2,35 +2,42 @@
 
 {% block content %}
 <section>
-    <div class="container">
-        <h1>Api Playground</h1>
+    <h1>Api Playground</h1>
+    <p>Use this page to test the API endpoints directly.</p>
 
-        <div class="api-test">
-            <h2>Test Food Get</h2>
-            <input type="number" id="foodIdInput" placeholder="Zadejte food id">
-            <button id="fetchFoodButton" onclick="fetchFood()">fetch Food</button>
-            <button id="resetFoodButton" onclick="resetFood()">reset Food</button>
-        </div>
+    <div class="api-test">
+        <h2>Test Food Get</h2>
+        <input type="number" id="foodIdInput" placeholder="Enter food id">
+        <button id="fetchFoodButton" onclick="fetchFood()">Fetch Food</button>
+        <button id="resetFoodButton" onclick="resetFood()">Reset</button>
+        <pre id="foodResponse" class="response"></pre>
     </div>
 </section>
 
 <script>
     function resetFood() {
-        document.getElementById("foodIdInput").value = "";
-    };
+        document.getElementById("foodResponse").textContent = "";
+    }
 
     function fetchFood() {
-        const foodId = document.getElementById("foodIdInput").value;
-        fetch(`/api/food/${foodId}/`)
-            .then(response => response.json())
+        const foodId = document.getElementById('foodIdInput').value;
+        if (!foodId) {
+            document.getElementById('foodResponse').textContent = 'Please enter a food ID.';
+            return;
+        }
+        fetch(`/api/food/${foodId}`)
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => {throw new Error(err.message)});
+                }
+                return response.json();
+            })
             .then(data => {
-                alert(`Food name: ${data.name}, Food price: ${data.price}`);
+                document.getElementById('foodResponse').textContent = JSON.stringify(data, null, 2);
             })
             .catch(error => {
-                console.error('Error fetching food:', error);
-                alert('Error fetching food. Please check the console for details.');
+                document.getElementById('foodResponse').textContent = 'Error: ' + error.message;
             });
-    };
-    console.log("Api playground loaded");
+    }
 </script>
 {% endblock %}

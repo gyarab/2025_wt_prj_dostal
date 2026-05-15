@@ -2,13 +2,46 @@
 
 {% block content %}
 <section>
-    <div class="container">
-        <h1>Home</h1>
+    <div class="text-center">
+        <h1 class="display-5 fw-bold">CalorieTracker</h1>
+        <div class="col-lg-8 mx-auto">
+            <p class="lead mb-4">
+                A web application focused on tracking your diet and nutritional intake. Our main goal is to allow you to
+                record your meals and monitor your daily intake of calories and macronutrients.
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="{% url 'food_database' %}" class="btn btn-primary btn-lg px-4 gap-3">Browse Foods</a>
+                <a href="#" class="btn btn-outline-secondary btn-lg px-4">Sign Up</a>
+            </div>
+        </div>
+    </div>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime numquam, eaque atque quas reprehenderit at
-            nostrum quod deserunt qui eum autem, temporibus quidem dignissimos, placeat officiis voluptas sapiente
-            beatae.
-            Iusto.</p>
+    <div class="mt-5 pt-5 border-top">
+        <h2 class="pb-2 text-center">Key Features</h2>
+        <div class="row g-4 pt-4 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+                <div class="p-4 rounded-3 feature-card h-100">
+                    <h3 class="fs-2">Log Your Meals</h3>
+                    <p>Quickly find and add foods from our extensive database to your daily log. Keep track of
+                        everything
+                        you eat with ease.</p>
+                </div>
+            </div>
+            <div class="feature col">
+                <div class="p-4 rounded-3 feature-card h-100">
+                    <h3 class="fs-2">Track Nutrients</h3>
+                    <p>Monitor your daily intake of calories, protein, carbs, and fats. Get a clear picture of your
+                        nutritional habits.</p>
+                </div>
+            </div>
+            <div class="feature col">
+                <div class="p-4 rounded-3 feature-card h-100">
+                    <h3 class="fs-2">Custom Foods</h3>
+                    <p>Can't find a food in our database? No problem. Add your own custom foods with their nutritional
+                        information.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}
