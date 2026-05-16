@@ -6,10 +6,13 @@
     <p>Use this page to test the API endpoints directly.</p>
 
     <div class="api-test">
-        <h2>Test Food Get</h2>
-        <input type="number" id="foodIdInput" placeholder="Enter food id">
-        <button id="fetchFoodButton" onclick="fetchFood()">Fetch Food</button>
-        <button id="resetFoodButton" onclick="resetFood()">Reset</button>
+        <h2>Test Food GET</h2>
+        <div class="d-flex flex-wrap gap-2 align-items-center mb-3">
+            <input type="number" id="foodIdInput" placeholder="Enter food id" class="form-control"
+                style="flex: 1 1 150px;">
+            <button id="fetchFoodButton" onclick="fetchFood()" class="btn btn-primary">Fetch Food</button>
+            <button id="resetFoodButton" onclick="resetFood()" class="btn btn-outline-secondary">Reset</button>
+        </div>
         <pre id="foodResponse" class="response"></pre>
     </div>
 </section>
