@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section>
+<section class="food-database">
     <h1>Food Database</h1>
     <p>Browse the foods currently available in our database.</p>
 
-    <form method="get" action="{% url 'food_database' %}" class="my-4">
-        <div class="input-group">
+    <form method="get" action="{% url 'food_database' %}" class="food-search-form">
+        <div class="food-search-group">
             <input type="text" name="q" class="form-control" placeholder="Search for a food..."
                 value="{{ search_query|default:'' }}">
             <button class="btn btn-primary" type="submit">Search</button>
@@ -14,13 +14,13 @@
     </form>
 
     {% if foods %}
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-3">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         {% for food in foods %}
         <div class="col">
             <div class="card h-100 feature-card">
                 <div class="card-body">
                     <h5 class="card-title">{{ food.name }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ food.calories }} kcal</h6>
+                    <h6 class="card-subtitle">{{ food.calories }} kcal</h6>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Protein: {{ food.protein }}g</li>
@@ -32,7 +32,7 @@
         {% endfor %}
     </div>
     {% else %}
-    <div class="text-center mt-5">
+    <div class="food-empty-state">
         <p>No food items found matching your search.</p>
     </div>
     {% endif %}

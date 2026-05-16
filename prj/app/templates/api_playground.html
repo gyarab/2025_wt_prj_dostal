@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section>
+<section class="api-playground">
     <h1>API Playground</h1>
     <p>Use this page to test the API endpoints directly.</p>
 
     <div class="api-test">
         <h2>Test Food GET</h2>
-        <div class="d-flex flex-wrap gap-2 align-items-center mb-3">
-            <input type="number" id="foodIdInput" placeholder="Enter food id" class="form-control"
-                style="flex: 1 1 150px;">
+
+        <div class="api-test-controls">
+            <input type="number" id="foodIdInput" placeholder="Enter food id" class="form-control">
             <button id="fetchFoodButton" onclick="fetchFood()" class="btn btn-primary">Fetch Food</button>
             <button id="resetFoodButton" onclick="resetFood()" class="btn btn-outline-secondary">Reset</button>
         </div>
+
         <pre id="foodResponse" class="response"></pre>
     </div>
 </section>
@@ -31,7 +32,7 @@
         fetch(`/api/food/${foodId}`)
             .then(response => {
                 if (!response.ok) {
-                    return response.json().then(err => {throw new Error(err.message)});
+                    return response.json().then(err => {throw new Error(err.message);});
                 }
                 return response.json();
             })
