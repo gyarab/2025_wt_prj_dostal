@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,16 @@
     <title>Home</title>
     <script>
         (() => {
+            window.resolveThemeSetting = (setting, prefersDark) => {
+                if (setting === 'dark' || setting === 'light') {
+                    return setting;
+                }
+                return prefersDark ? 'dark' : 'light';
+            };
+
             const savedTheme = localStorage.getItem('theme');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const theme = savedTheme === 'dark' || savedTheme === 'light'
-                ? savedTheme
-                : (prefersDark ? 'dark' : 'light');
+            const theme = window.resolveThemeSetting(savedTheme, prefersDark);
             document.documentElement.setAttribute('data-bs-theme', theme);
         })();
     </script>
@@ -84,10 +89,7 @@
             const media = window.matchMedia('(prefers-color-scheme: dark)');
 
             const resolveTheme = (setting) => {
-                if (setting === 'light' || setting === 'dark') {
-                    return setting;
-                }
-                return media.matches ? 'dark' : 'light';
+                return window.resolveThemeSetting(setting, media.matches);
             };
 
             const applyTheme = (setting) => {
