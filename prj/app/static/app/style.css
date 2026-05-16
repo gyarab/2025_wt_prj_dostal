@@ -16,6 +16,25 @@
   --shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
 }
 
+[data-bs-theme="light"] {
+  --bg-dark: oklch(0.92 0.03 247);
+  --bg: oklch(0.96 0.03 247);
+  --bg-light: oklch(1 0.03 247);
+  --text: oklch(0.15 0.06 247);
+  --text-muted: oklch(0.4 0.06 247);
+  --highlight: oklch(1 0.06 247);
+  --border: oklch(0.6 0.06 247);
+  --border-muted: oklch(0.7 0.06 247);
+  --primary: oklch(0.4 0.1 247);
+  --secondary: oklch(0.4 0.1 67);
+  --danger: oklch(0.5 0.06 30);
+  --warning: oklch(0.5 0.06 100);
+  --success: oklch(0.5 0.06 160);
+  --info: oklch(0.5 0.06 260);
+  --shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.03), 0px 4px 4px hsla(0, 0%, 0%, 0.05);
+  --primary-hover: oklch(0.35 0.1 247);
+}
+
 body {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
