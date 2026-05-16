@@ -14,6 +14,8 @@
   --warning: oklch(0.7 0.06 100);
   --success: oklch(0.7 0.06 160);
   --info: oklch(0.7 0.06 260);
+  --theme-switcher-min-width: 7rem;
+  --theme-switcher-max-width: 10rem;
   --shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
 }
 
@@ -157,8 +159,8 @@ footer {
 }
 
 .theme-switcher {
-  min-width: 110px;
-  max-width: 160px;
+  min-width: var(--theme-switcher-min-width);
+  max-width: var(--theme-switcher-max-width);
   color: var(--text);
   background-color: var(--bg-light);
   border-color: var(--border);
