@@ -1,11 +1,21 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <script>
+        (() => {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme === 'dark' || savedTheme === 'light'
+                ? savedTheme
+                : (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-bs-theme', theme);
+        })();
+    </script>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -40,6 +50,14 @@
                             <a class="nav-link" href="/api_playground">API Playground</a>
                         </li>
                     </ul>
+                    <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+                        <label for="theme-switcher" class="visually-hidden">Theme</label>
+                        <select id="theme-switcher" class="form-select form-select-sm theme-switcher" aria-label="Color theme switcher">
+                            <option value="auto">Auto</option>
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -59,6 +77,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script>
+        (() => {
+            const root = document.documentElement;
+            const switcher = document.getElementById('theme-switcher');
+            const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+            const resolveTheme = (setting) => {
+                if (setting === 'light' || setting === 'dark') {
+                    return setting;
+                }
+                return media.matches ? 'dark' : 'light';
+            };
+
+            const applyTheme = (setting) => {
+                root.setAttribute('data-bs-theme', resolveTheme(setting));
+            };
+
+            const getSetting = () => localStorage.getItem('theme') || 'auto';
+
+            const setSetting = (setting) => {
+                localStorage.setItem('theme', setting);
+                applyTheme(setting);
+            };
+
+            const currentSetting = getSetting();
+            switcher.value = currentSetting;
+            applyTheme(currentSetting);
+
+            switcher.addEventListener('change', (event) => {
+                setSetting(event.target.value);
+            });
+
+            media.addEventListener('change', () => {
+                if (getSetting() === 'auto') {
+                    applyTheme('auto');
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>
