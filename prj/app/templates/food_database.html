@@ -5,14 +5,6 @@
     <h1>Food Database</h1>
     <p>Browse the foods currently available in our database.</p>
 
-    <form method="get" action="{% url 'food_database' %}" class="food-search-form">
-        <div class="food-search-group">
-            <input type="text" name="q" class="form-control" placeholder="Search for a food..."
-                value="{{ search_query|default:'' }}">
-            <button class="btn btn-primary" type="submit">Search</button>
-        </div>
-    </form>
-
     {% if foods %}
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         {% for food in foods %}
